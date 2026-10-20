@@ -6,11 +6,7 @@
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="Seminar2.seminar3">
-        <option name="selectionMode" value="DROPDOWN" />
-        <DialogSelection />
-      </SelectionState>
-      <SelectionState runConfigName="seminar3">
+      <SelectionState runConfigName="Seminar4">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
