@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E3F2FD"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="✈️ Adaugă Avion\n(AI Premium Design)"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#1565C0"
+            android:gravity="center"
+            android:layout_marginBottom="32dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📝 Date de bază"
+            android:textColor="#1976D2"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/etModel"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:hint=" Model aeronavă (ex: A320)"
+            android:paddingStart="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/etCapacitate"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:hint=" Capacitate (nr. pasageri)"
+            android:inputType="number"
+            android:paddingStart="16dp"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🌍 Detalii Operaționale"
+            android:textColor="#1976D2"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerCompanie"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:entries="@array/companii_aeriene_array"
+            android:layout_marginBottom="16dp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="8dp"
+            android:layout_marginBottom="24dp">
+            <RadioButton
+                android:id="@+id/rbIntern"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zbor Intern"
+                android:textColor="#424242"
+                android:checked="true"
+                android:layout_marginEnd="16dp"/>
+            <RadioButton
+                android:id="@+id/rbExtern"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#424242"
+                android:text="Zbor Extern" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⭐ Facilități &amp; Status"
+            android:textColor="#1976D2"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <CheckBox
+            android:id="@+id/cbMancare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#424242"
+            android:text="Meniu VIP inclus"
+            android:layout_marginBottom="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rating: "
+                android:textColor="#424242"
+                android:textStyle="bold" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="0.5"
+                android:progressTint="#FFC107" />
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/switchDisponibil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aeronavă Disponibilă"
+            android:textColor="#1B5E20"
+            android:textStyle="bold"
+            android:checked="true"
+            android:layout_marginBottom="32dp" />
+
+        <Button
+            android:id="@+id/btnSalveaza"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="SALVEAZĂ DATELE"
+            android:textSize="18sp"
+            android:backgroundTint="#FF4081"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:elevation="6dp"
+            android:onClick="intoarceRezultat"/>
+
+    </LinearLayout>
+</ScrollView>

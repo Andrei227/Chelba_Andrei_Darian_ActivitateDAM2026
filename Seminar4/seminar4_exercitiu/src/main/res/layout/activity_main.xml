@@ -22,7 +22,14 @@
         android:id="@+id/btnAdauga"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/adauga_avion" />
+        android:text="@string/adauga_avion"
+        android:onClick="deschideAdaugareAvion"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/deschide_interfata_ai"
+        android:onClick="deschideAdaugareAI" />
     
     <TextView
         android:id="@+id/tvAddPlane"

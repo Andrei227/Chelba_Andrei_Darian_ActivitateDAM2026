@@ -1,14 +1,22 @@
 package com.example.seminar4_exercitiu;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    private TextView tvAddPlane;
+    private static final int CODE_ADAUGA = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +28,43 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        tvAddPlane = findViewById(R.id.tvAddPlane);
+    }
+
+    public void deschideAdaugareAvion(View view) {
+        Intent intent = new Intent(getApplicationContext(), adauga_avion.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putString("mesaj", "Adauga datele avionului");
+        intent.putExtras(bundle);
+
+        startActivityForResult(intent, CODE_ADAUGA);
+    }
+
+    public void deschideAdaugareAI(View view) {
+        Intent intent = new Intent(getApplicationContext(), adauga_avion.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("foloseste_design_ai", true);
+        intent.putExtras(bundle);
+
+        startActivityForResult(intent, CODE_ADAUGA);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == CODE_ADAUGA) {
+            if(resultCode == RESULT_OK && data != null) {
+                Avion avion = (Avion) data.getSerializableExtra("avion_nou");
+
+                if(avion != null) {
+                    tvAddPlane.setText(avion.toString());
+                    Toast.makeText(getApplicationContext(), "Avion salvat: " + avion.toString(), Toast.LENGTH_LONG).show();
+                }
+            }
+        }
     }
 }

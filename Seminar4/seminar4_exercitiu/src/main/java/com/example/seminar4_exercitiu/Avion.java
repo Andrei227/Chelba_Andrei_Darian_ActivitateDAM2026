@@ -9,7 +9,7 @@ public class Avion implements Serializable {
     private float rating;
     private boolean disponibil;
 
-    public Avion(String model, String companie, int capacitate, float rating, boolean disponibil) {
+    public Avion(String model, int capacitate, String companie, float rating, boolean disponibil) {
         this.model = model;
         this.companie = companie;
         this.capacitate = capacitate;
