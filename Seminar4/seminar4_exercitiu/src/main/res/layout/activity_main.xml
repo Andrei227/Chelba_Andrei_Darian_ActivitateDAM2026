@@ -30,6 +30,12 @@
         android:layout_height="wrap_content"
         android:text="@string/deschide_interfata_ai"
         android:onClick="deschideAdaugareAI" />
+
+    <Button
+        android:id="@+id/btnVeziLista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lista avioane"/>
     
     <TextView
         android:id="@+id/tvAddPlane"

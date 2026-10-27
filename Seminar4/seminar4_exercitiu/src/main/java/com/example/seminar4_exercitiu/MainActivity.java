@@ -3,6 +3,7 @@ package com.example.seminar4_exercitiu;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,10 +14,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView tvAddPlane;
     private static final int CODE_ADAUGA = 100;
+
+    public static ArrayList<Avion> lista = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         tvAddPlane = findViewById(R.id.tvAddPlane);
+
+        Button btnLista = findViewById(R.id.btnVeziLista);
+
+        btnLista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ListViewActivity.class);
+
+                startActivity(intent);
+            }
+        });
     }
 
     public void deschideAdaugareAvion(View view) {
@@ -61,6 +77,9 @@ public class MainActivity extends AppCompatActivity {
                 Avion avion = (Avion) data.getSerializableExtra("avion_nou");
 
                 if(avion != null) {
+
+                    lista.add(avion);
+
                     tvAddPlane.setText(avion.toString());
                     Toast.makeText(getApplicationContext(), "Avion salvat: " + avion.toString(), Toast.LENGTH_LONG).show();
                 }
